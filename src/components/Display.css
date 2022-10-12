@@ -1,0 +1,10 @@
+#display {
+    height: 50px;
+    background-color: gainsboro;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    border: 3px solid white-smoke;
+    justify-self: end;
+    border-radius: 5%;
+    margin: 30px 0px;
+}
