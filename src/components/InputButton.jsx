@@ -1,5 +1,6 @@
 import "./Calculator.css"
-function NumberButton(props){
+
+function InputButton(props){
     
     return (
         <button className="button" onClick={() => props.handleButtonPress(props.value)}>
@@ -9,4 +10,4 @@ function NumberButton(props){
     )
 }
 
-export default NumberButton
+export default InputButton
