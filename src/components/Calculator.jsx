@@ -28,8 +28,8 @@ function Calculator() {
 
             <Display content={content} />
 
-            <div className="container">
-                <div className="number-container">
+            <div id="main-container">
+                <div id="number-container">
                     <InputButton value="7" handleButtonPress={handleButtonPress} id="seven" />
                     <InputButton value="8" handleButtonPress={handleButtonPress} id="eight" />
                     <InputButton value="9" handleButtonPress={handleButtonPress} id="nine" />
@@ -44,15 +44,17 @@ function Calculator() {
                     <InputButton value="C" handleButtonPress={handleButtonPress} id="clear" />
                 </div>
 
-                <ul>
+                <div id="operations-container">
                     <InputButton value="+" handleButtonPress={handleButtonPress} id="add" />
                     <InputButton value="-" handleButtonPress={handleButtonPress} id="subtract"/>
                     <InputButton value="*" handleButtonPress={handleButtonPress} id="multiply"/>
                     <InputButton value="/" handleButtonPress={handleButtonPress} id="divide"/>
-                </ul>
+                </div>
             </div>
 
-            <InputButton value="=" handleButtonPress={handleEquals} id="equals"/>
+            <div id="equals-container">
+                <InputButton id="equals-button" value="=" handleButtonPress={handleEquals} id="equals"/>
+            </div>
         </div>
 
 
