@@ -53,7 +53,7 @@ function Calculator() {
             </div>
 
             <div id="equals-container">
-                <InputButton id="equals-button" value="=" handleButtonPress={handleEquals} id="equals"/>
+                <InputButton id="equals-button" value="=" handleButtonPress={handleEquals}/>
             </div>
         </div>
 
