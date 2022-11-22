@@ -18,12 +18,15 @@ function Calculator() {
     }
 
     const checkDecimals = (input) => {
-        if(input.split('.').length > 2){
+        //replace consecutive decimals
+        input = input.replace(/\.+/, ".");
+
+        //replace "x.x." with "x.x"
+        if ( input.match(/[0-9]+\.[0-9]+\./)){
             return input.substring(0, input.length - 1);
         }
 
         return input;
-
     }
 
     const handleEquals = () => {
