@@ -30,15 +30,15 @@ const ParseInput = (input) => {
 const parseInputHelper = (input) => {
     //base case
     if (input.length === 0) {
-        inputInts.push(parseInt(inputStr));
+        inputInts.push(parseFloat(inputStr));
         doSum();
         return sum;
     }
 
-    if(parseInt(input[0])) {
+    if(parseFloat(input[0]) || input[0] === '.' || input[0] === '0') {
         inputStr += input[0];   
     } else {
-        inputInts.push(parseInt(inputStr));
+        inputInts.push(parseFloat(inputStr));
         inputStr = "";
 
         // do intermediry op
@@ -55,7 +55,13 @@ const parseInputHelper = (input) => {
 function doSum(){
     // if op is not empty at this point, sum everything
     if (op.length > 0){
+
+        var operation = getOperation(op);
+        if(operation === null){
+            console.log("oops");
+        }
         sum = inputInts.reduce(getOperation(op))
+
         inputInts = [sum];
         op = "";
     }
