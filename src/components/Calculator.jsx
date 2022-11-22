@@ -13,8 +13,17 @@ function Calculator() {
         } else if (content === '0') {
             setContent(value)
         } else {
-            setContent(prevContent => prevContent + value)
+            setContent(prevContent => checkDecimals(prevContent + value))
         }
+    }
+
+    const checkDecimals = (input) => {
+        if(input.split('.').length > 2){
+            return input.substring(0, input.length - 1);
+        }
+
+        return input;
+
     }
 
     const handleEquals = () => {
@@ -53,7 +62,7 @@ function Calculator() {
             </div>
 
             <div id="equals-container">
-                <InputButton id="equals-button" value="=" handleButtonPress={handleEquals}/>
+                <InputButton id="equals" value="=" handleButtonPress={handleEquals}/>
             </div>
         </div>
 
