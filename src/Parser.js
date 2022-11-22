@@ -20,24 +20,46 @@ const getOperation = (sign) => {
 }
 
 const ParseInput = (input) => {
+  var result = parseInputHelper(input);
+  sum = 0;
+  inputInts = [];
+  inputStr = "";
+  return result;
+} 
+
+const parseInputHelper = (input) => {
     //base case
     if (input.length === 0) {
         inputInts.push(parseInt(inputStr));
-        sum = inputInts.reduce(getOperation(op))
+        doSum();
         return sum;
     }
 
     if(parseInt(input[0])) {
-        inputStr += input[0];
+        inputStr += input[0];   
     } else {
         inputInts.push(parseInt(inputStr));
         inputStr = "";
-        op = input[0];
-    }
 
-    return ParseInput(input.substring(1));
+        // do intermediry op
+        if (op.length > 0 ){
+            doSum()
+        } 
+        
+        op = input[0];
+        
+    }
+    return parseInputHelper(input.substring(1));
 }
 
+function doSum(){
+    // if op is not empty at this point, sum everything
+    if (op.length > 0){
+        sum = inputInts.reduce(getOperation(op))
+        inputInts = [sum];
+        op = "";
+    }
+}
 
 
 export default ParseInput;
