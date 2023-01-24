@@ -1,11 +1,9 @@
 #main-container {
-    background-color: red;
     display: grid;
     grid-template-columns: 75% 25%
 }
 
 #number-container {
-    background-color: blueviolet;
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
@@ -18,7 +16,6 @@
 }
 
 #equals-container {
-    background-color: greenyellow;
     display: grid;
     grid-template-columns: 100%
 }
